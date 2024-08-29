@@ -1,0 +1,139 @@
+@import url("reset.css");
+
+:root{
+    --dark-gray:hsl(0, 0%, 55%);
+    --very-dark-gray:hsl(0, 0%, 41%);
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+/* Styling the header */
+
+header{
+    padding:2.5rem 1rem;
+
+    position: relative;
+}
+
+#hero-image{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+}
+
+.top-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo{
+    width: 150px;
+    z-index: 2;
+}
+
+/* Adding animation to menu's icons */
+
+.menu{
+    cursor: pointer;
+    position: relative;
+    width: 25px;
+    height: 16px;
+    transition: width 0.1s ease-in-out, height 0.1s ease-in-out;
+    z-index: 2;
+}
+
+.menu img{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    transition: opacity 0.2s ease-in-out , visibility 0.2s ease-in-out;
+}
+
+#closing-menu{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.menu.open #menu{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu.open #closing-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu.open{
+    width: 20px;
+    height: 20px;
+}
+
+@media screen and (min-width:50rem) {
+    .menu{
+        display: none;
+    }
+}
+
+/* Styling the navbar */
+
+.nav-bar{
+    padding:1rem;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: black;
+    color:white;
+
+    position: absolute;
+    top:0;
+    left:100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:1rem;
+    z-index: 1;
+
+    transition: left 1s ease-in-out;
+}
+
+.nav-bar a{
+    position: relative;
+    width: fit-content;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Josefin Sans";
+    font-weight: 300;
+}
+
+.nav-bar a::after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: white;
+
+    position: absolute;
+    bottom: 0;
+    left:0;
+
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.nav-bar a:hover::after{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nav-bar.open{
+    left:0;
+}
