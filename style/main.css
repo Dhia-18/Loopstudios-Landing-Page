@@ -234,7 +234,7 @@ header h1{
 /* Styling the main */
 
 main{
-    padding:5rem 1.5rem;
+    padding:7.2rem 1.5rem;
 
     display: flex;
     flex-direction: column;
@@ -266,7 +266,7 @@ main{
 
 @media screen and (min-width:45rem) {
     main{
-        padding:6rem 11.6%;
+        padding:7.2rem 11.6%;
     }
 
     .introduction_text{
